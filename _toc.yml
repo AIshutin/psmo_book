@@ -1,0 +1,89 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+defaults:
+  numbered: False
+parts:
+  - caption: Гипотезы и доверительные интервалы
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Энтропия и дивергенция Кульбака-Лейблера
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Метод максимального правдоподобия
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Тесты LR, LM, W
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: EM-алгоритм
+    chapters:
+      - file: em/theory
+        sections:
+        - file: em/definition
+        - file: em/else
+      - file: em/practice
+        sections:
+        - file: em/notebook
+      - file: em/problems
+        sections:
+        - file: em/quiz
+  - caption: Бутстрэп
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Теорема Гаусса-Маркова
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Распределения в линейной регрессии
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Тестирование гипотез в линейной регрессии
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Гетероскедастичность и бутстрэп
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Эндогенность
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Мультиколлинеарность и отбор регрессоров
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Нестандартные регрессии
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Логистическая регрессия
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Непараметрическое оценивание
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Непараметрические тесты
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Множественное тестирование
+    chapters:
+    - url: https://example.com
+      title: Example website
+  - caption: Байесовский подход
+    chapters:
+    - url: https://example.com
+      title: Example website
+  
