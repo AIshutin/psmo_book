@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прикладная статистика в машинном обучении &#8212; Прикладная статистика в машинном обучении</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Задачи" href="problems.html" />
+    <link rel="prev" title="Практика" href="practice.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Прикладная статистика в машинном обучении</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Информация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гипотезы и доверительные интервалы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Энтропия и дивергенция Кульбака-Лейблера
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Метод максимального правдоподобия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тесты LR, LM, W
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  EM-алгоритм
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="theory.html">
+   Теория
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="definition.html">
+     Что-то
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="else.html">
+     Что-то ещё
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="practice.html">
+   Практика
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Прикладная статистика в машинном обучении
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="problems.html">
+   Задачи
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz.html">
+     Задачи для подготовки к квизу
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Теорема Гаусса-Маркова
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Распределения в линейной регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тестирование гипотез в линейной регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гетероскедастичность и бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Эндогенность
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Мультиколлинеарность и отбор регрессоров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Нестандартные регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Логистическая регрессия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрическое оценивание
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрические тесты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Множественное тестирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Байесовский подход
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/em/notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fem/notebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/em/notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#em">
+   Семинар 4: EM-алгоритм
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Постановка задачи.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     EM-алгоритм в общем виде.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Обоснование EM-алгоритма.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Обозначения.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Пример с лекции: задача о кластеризации (разделение смеси распределений).
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Тестирование EM-алгоритма на случайных данных.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Прикладная статистика в машинном обучении<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="em">
+<h2>Семинар 4: EM-алгоритм<a class="headerlink" href="#em" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Постановка задачи.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Сначала вспомним постановку задачи.
+Как и в предыдущих задачах, мы хотим максимизировать логарифм функции правдоподобия <span class="math notranslate nohighlight">\(\ell(x | \theta)\)</span>, чтобы найти оценку вектора параметров <span class="math notranslate nohighlight">\(\theta\)</span>.
+Однако бывает так, что эта функция имеет такой вид, что максимизировать сложно (например, если под логарифмом оказывается сумма).
+Идея EM-алгоритма состоит в том, чтобы ввести латентные переменные <span class="math notranslate nohighlight">\(z\)</span> и использовать совместное распределение <span class="math notranslate nohighlight">\(p(X, Z)\)</span> для нахождения <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.</p>
+</div>
+<div class="section" id="id3">
+<h3>EM-алгоритм в общем виде.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Инициализация:</strong> задать начальные условия на <span class="math notranslate nohighlight">\(\theta_{old}\)</span>.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>E.1-шаг:</strong> найти условное распределение латентных переменных <span class="math notranslate nohighlight">\(p(Z | X, \theta_{old})\)</span>.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>E.2-шаг:</strong> построить функцию <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old}) = E_{Z | X, \theta}(\ell(x, z | \theta) | x, \theta_{old})\)</span>.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>M-шаг:</strong> максимизировать <span class="math notranslate nohighlight">\(Q\)</span> по <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Далее повторять E- и M-шаги до сходимости.</p>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>Обоснование EM-алгоритма.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Для обоснования ЕМ-алгоритма и понимания обозначений рассмотрим пример:</p>
+<p>Пусть <span class="math notranslate nohighlight">\(X_1, X_2, \ldots, X_n\)</span> <span class="math notranslate nohighlight">\(\sim f(x, | \theta)\)</span>, где <span class="math notranslate nohighlight">\(f\)</span> – какая-то функция плотности, <span class="math notranslate nohighlight">\(\theta\)</span> – вектор неизвестных параметров этой плотности.</p>
+<p>Пусть латентные переменные принимают всего два значения: <span class="math notranslate nohighlight">\(Z \in \{0, 1\}\)</span> – с вероятностями <span class="math notranslate nohighlight">\(P(Z = 0) = p_1\)</span>, <span class="math notranslate nohighlight">\(P(Z = 1) = 1-p_1\)</span>.</p>
+<p>Тогда <span class="math notranslate nohighlight">\(\ell(x | \theta) = \sum_i \ln f(x_i | \theta)\)</span>.</p>
+<p>Заметим, что</p>
+<div class="math notranslate nohighlight">
+\[
+\ell(x | \theta) = \sum_i \ln f(x_i | \theta) = \sum_i \sum_j P(Z = j)\ln f(x_i | \theta) = 
+\sum_i \sum_j P(Z = j)\ln \dfrac{f(x_i, Z = j | \theta)}{P(Z = j | x_i, \theta)} = 
+\]</div>
+<p>(чтобы понять последний переход, распишите знаменатель выражения под логарифмом по формуле условной вероятности)</p>
+<div class="math notranslate nohighlight">
+\[
+= \sum_i \sum_j P(Z = j)\ln \dfrac{f(x_i, Z = j | \theta) P(Z = j)}{P(Z = j | x_i, \theta)P(Z = j)} = 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \sum_i \sum_j P(Z = j) \ln \dfrac{f(x_i, Z = j | \theta)}{P(Z = j)} + \sum_i \sum_j P(Z = j) \ln \dfrac{P(Z = j)}{P(Z = j | x_i, \theta)} =
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+M(P(Z = j), \theta) + D_{KL}[P(Z = j) || P(Z = j | x_i, \theta)].
+\]</div>
+<p>Так как <span class="math notranslate nohighlight">\(D_{KL} \ge 0\)</span>, то <span class="math notranslate nohighlight">\(M(P(Z = j), \theta)\)</span> является нижней оценкой на логарифм правдоподобия. Идея EM-алгоритма состоит в том, чтобы поочерёдно максимизировать <span class="math notranslate nohighlight">\(M(P(Z = j), \theta)\)</span> по <span class="math notranslate nohighlight">\(P(Z = j)\)</span> (на E-шаге) и по <span class="math notranslate nohighlight">\(\theta\)</span> (на M-шаге).</p>
+<p><strong>E-шаг.</strong></p>
+<p>Максимизируем <span class="math notranslate nohighlight">\(M(P(Z = j), \theta)\)</span> по <span class="math notranslate nohighlight">\(P(Z = j)\)</span>.</p>
+<p>Так как <span class="math notranslate nohighlight">\(\ell(x | \theta)\)</span> не зависит от <span class="math notranslate nohighlight">\(P(Z = j)\)</span>, то максимум <span class="math notranslate nohighlight">\(M(P(Z = j), \theta)\)</span> по <span class="math notranslate nohighlight">\(P(Z = j)\)</span> будет достигнут, когда <span class="math notranslate nohighlight">\(D_{KL}\)</span> минимальна.</p>
+<p>Минимальная <span class="math notranslate nohighlight">\(D_{KL}(A || B)\)</span> равна 0, и это достигается, когда <span class="math notranslate nohighlight">\(A || B\)</span>. Из этого делаем вывод, что на E-шаге мы устанавливаем</p>
+<div class="math notranslate nohighlight">
+\[
+P(Z = j) := P(Z = j | x_i, \theta^{old}).
+\]</div>
+<p><strong>M-шаг.</strong></p>
+<p>Максимизируем <span class="math notranslate nohighlight">\(M(P(Z = j), \theta)\)</span> по <span class="math notranslate nohighlight">\(\theta\)</span>. Распишем <span class="math notranslate nohighlight">\(M\)</span> ещё раз:</p>
+<div class="math notranslate nohighlight">
+\[
+M = \sum_i \sum_j P(Z = j) \ln \dfrac{f(x_i, Z = j | \theta)}{P(Z = j)}
+\]</div>
+<p>Заметим, что знаменатель подлогарифмического выражения не зависит от <span class="math notranslate nohighlight">\(\theta\)</span>. Выбросим его и заменим <span class="math notranslate nohighlight">\(P(Z = j)\)</span> на результат, полученный нами на E-шаге:</p>
+<div class="math notranslate nohighlight">
+\[
+M = \sum_i \sum_j P(Z = j | x_i, \theta^{old}) \ln f(x_i, Z = j | \theta) = \sum_i E_{Z | x_i, \theta_{old}}(\ln f(x_i, Z = j | \theta)) := Q(\theta, \theta^{old}).
+\]</div>
+<p>Далее мы максимизируем <span class="math notranslate nohighlight">\(Q\)</span> по по <span class="math notranslate nohighlight">\(\theta\)</span>, обновляем <span class="math notranslate nohighlight">\(\theta\)</span> на аргмаксимум <span class="math notranslate nohighlight">\(Q\)</span>, и возвращаемся к E-шагу.</p>
+</div>
+<div class="section" id="id5">
+<h3>Обозначения.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Теперь соотнесём обозначения из общей постановки EM-алгоритма с теми, что мы получили в примере.</p>
+<p><span class="math notranslate nohighlight">\(p(Z)\)</span> – это безусловное распределение <span class="math notranslate nohighlight">\(Z\)</span>. По сути, это массив размера <span class="math notranslate nohighlight">\(1\times k\)</span>, где <span class="math notranslate nohighlight">\(k\)</span> – число значений <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(p(Z | X, \theta_{old})\)</span> – это условное распределение <span class="math notranslate nohighlight">\(Z\)</span> при условии выборки. По сути, это массив размера <span class="math notranslate nohighlight">\(N\times k\)</span>, где <span class="math notranslate nohighlight">\(N\)</span> – размер выборки, <span class="math notranslate nohighlight">\(k\)</span> – число значений <span class="math notranslate nohighlight">\(Z\)</span>. Каждая строчка есть вектор вероятностей того, что на данном наблюдении <span class="math notranslate nohighlight">\(Z\)</span> равно соответсвующему значению.</p>
+<p><span class="math notranslate nohighlight">\(E_{Z | X, \theta}(\cdot)\)</span> – это сумма матожиданий <span class="math notranslate nohighlight">\(\sum_i E_{Z | x_i, \theta}\)</span> по всем наблюдениям выборки.</p>
+<p><span class="math notranslate nohighlight">\(p(\cdot)\)</span> – распределение того, что стоит в скобках. Эта функция может оказаться функцией вероятности или функцией плотности в зависимости от контекста.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id6">
+<h3>Пример с лекции: задача о кластеризации (разделение смеси распределений).<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Пример:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  1.,  5.,  8., 19., 30., 22.,  5.,  8.,  1.]),
+ array([0.76894499, 1.35188089, 1.93481678, 2.51775267, 3.10068857,
+        3.68362446, 4.26656035, 4.84949625, 5.43243214, 6.01536803,
+        6.59830393]),
+ &lt;a list of 10 Patch objects&gt;)
+</pre></div>
+</div>
+<img alt="../_images/notebook_23_1.png" src="../_images/notebook_23_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Постановка задачи.</strong></p>
+<p>Пусть мы точно знаем, что наблюдения принадлежат одному из двух кластеров. Пусть в первом кластере наблюдения берутся из нормального <span class="math notranslate nohighlight">\(\mathcal{N}(\mu_1, \sigma_1^2)\)</span> распределения, а во втором – из нормального <span class="math notranslate nohighlight">\(\mathcal{N}(\mu_2, \sigma_2^2)\)</span> распределения. Предположим, что все наблюдения независимы, и вероятность того, что наблюдение относится к первому кластеру, равна <span class="math notranslate nohighlight">\(p_1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Определите вектор параметров для данной задачи и задайте начальные условия</span>
+<span class="c1"># theta = (mu_1, sigma2_1, mu2, sigma2_2, p_1)</span>
+<span class="c1"># (воспользовались эвристикой)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1. ,  4.5, 10. ,  4.5,  0.5])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Определение латентных переменных.</strong></p>
+<p><span class="math notranslate nohighlight">\(z \in \{1, 2\}\)</span> – номер кластера.</p>
+<p>Вспомним, что у нас есть обозначение <span class="math notranslate nohighlight">\(p_1 = P(z = 1)\)</span> – вероятность отнести наблюдение к первому кластеру.</p>
+<p><strong>E.1-шаг.</strong></p>
+<p>Найти условное распределение латентных переменных <span class="math notranslate nohighlight">\(p(Z | X, \theta_{old})\)</span>. Для данной задачи это означает, что мы должны получить массив <span class="math notranslate nohighlight">\(8\times2\)</span> (8 наблюдений, 2 значения <span class="math notranslate nohighlight">\(z\)</span>). Нам достаточно найти только один столбец массива – этот столбец будет размера <span class="math notranslate nohighlight">\(8\times1\)</span> (то есть вероятность того, что <span class="math notranslate nohighlight">\(z = 1\)</span>) – потому что второй столбец определяется однозначно как (<span class="math notranslate nohighlight">\(1 - \)</span> первый столбец).</p>
+<p>По формуле условной вероятности:
+$<span class="math notranslate nohighlight">\(
+p(z | x, \theta_{old}) = \dfrac{p(z, x | \theta_{old})}{p(x | \theta_{old})}
+\)</span>$</p>
+<p>и
+$<span class="math notranslate nohighlight">\(
+p(x | z, \theta_{old}) = \dfrac{p(x, z | \theta_{old})}{p(z)}
+\)</span>$</p>
+<p>Тогда
+$<span class="math notranslate nohighlight">\(
+P(z_i = 1 | x_i, \theta_{old}) = \dfrac{p(z_i = 1, x_i | \theta_{old})}{f(x_i | \theta_{old})}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+= \dfrac{f(x_i | z_i = 1, \theta_{old})p_1}{p_1f(x_i | z_i = 1, \theta_{old}) + (1-p_1)f(x_i | z_i = 2, \theta_{old})}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Задайте плотность x</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sigma2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">sigma2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Рассчитайте распределение латентных переменных на наших данных</span>
+<span class="n">p_z_1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> 
+                                                       <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_z_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.31058579e-01, 2.68941421e-01, 9.99088949e-01, 9.99876605e-01,
+       9.99876605e-01, 9.93307149e-01, 4.74258732e-02, 1.23394576e-04])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>E.2-шаг.</strong></p>
+<p>Постройте функцию <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old}) = E_{Z | X, \theta}(\ell(x, z | \theta) | x, \theta_{old})\)</span>.</p>
+<p>По формуле условной вероятности:
+$<span class="math notranslate nohighlight">\(
+p(x, z | \theta) = p(x | \theta, z) \times p(z)
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+Q(\theta, \theta_{old}) = \sum_i P(z_i = 1 | x, \theta_{old})[\ln f(x_i | \theta) + \ln p_1] + (1 - P(z_i = 1 | x, \theta_{old})[\ln f(x_i | \theta) + \ln(1-p_1)].
+\]</div>
+<p><strong>M-шаг.</strong></p>
+<p>Выведите формулы для максимизации <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+Q'_{\mu_1} = \sum_i P(z_i = 1 | x, \theta_{old}) \dfrac{(x_i - \mu_1)}{\sigma_1^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mu_1^{new} = \dfrac{\sum_i P(z_i = 1 | x, \theta_{old}) x_i}{\sum_i P(z_i = 1 | x, \theta_{old})}
+\]</div>
+<p>Аналогично,</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_2^{new} = \dfrac{\sum_i (1 - P(z_i = 1 | x, \theta_{old})) x_i}{\sum_i (1 - P(z_i = 1 | x, \theta_{old}))}
+\]</div>
+<p>Далее:</p>
+<div class="math notranslate nohighlight">
+\[
+Q'_{\sigma_1^2} = \sum_i P(z_i = 1 | x, \theta_{old}) (-\dfrac{1}{2\sigma^2_1} + \dfrac{1}{2}\dfrac{(x_i - \mu)^2}{\sigma_1^4})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sigma_1^{2, new} = \dfrac{\sum_i (x_i - \mu)^2 P(z_i = 1 | x, \theta_{old})}{\sum_i P(z_i = 1 | x, \theta_{old})}
+\]</div>
+<p>Аналогично для <span class="math notranslate nohighlight">\(\sigma_2^{2, new}\)</span>.</p>
+<p>Далее:</p>
+<div class="math notranslate nohighlight">
+\[
+Q'_{p_1} = \sum_i P(z_i = 1 | x, \theta_{old}) \dfrac{1}{p_1} - (1 - P(z_i = 1 | x, \theta_{old})) \dfrac{1}{1 - p_1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+p_1^{new} = \dfrac{\sum_i P(z_i = 1 | x, \theta_{old})}{n}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Реализуйте формулы для одного M-шага</span>
+<span class="n">mu_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">p_z_1</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma2_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">p_z_1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma2_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_z_1</span><span class="p">))</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_z_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mu_1</span><span class="p">,</span> <span class="n">sigma2_1</span><span class="p">,</span> <span class="n">mu_2</span><span class="p">,</span> <span class="n">sigma2_2</span><span class="p">,</span> <span class="n">p1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1. ,  4.5, 10. ,  4.5,  0.5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_new</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.49618283, 2.74390095, 7.57355004, 3.36811658, 0.62996232])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Сбор EM-алгоритма в функцию.</strong></p>
+<p>На каждом шаге будем дополнительно рассчитывать значение <span class="math notranslate nohighlight">\(Q\)</span>. Для этого определим дополнительные функции:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Логарифм функции плотности x</span>
+<span class="k">def</span> <span class="nf">lnf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sigma2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">sigma2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Q_f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">p_z_1</span><span class="p">):</span>
+    <span class="n">ell1</span> <span class="o">=</span> <span class="n">lnf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">ell2</span> <span class="o">=</span> <span class="n">lnf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span> <span class="o">*</span> <span class="n">ell1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_z_1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ell2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Запустим цикл:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">EM</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    
+    <span class="n">Q_history</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        
+        <span class="c1"># E-step</span>
+        <span class="n">p_z_1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> 
+                                                       <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        
+        <span class="n">Q_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Q_f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">p_z_1</span><span class="p">))</span>
+        
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">Q_history</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Q_history</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">:</span>
+                <span class="k">break</span>
+        
+        <span class="c1"># M-step</span>
+        <span class="n">mu_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span>
+        <span class="n">mu_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">p_z_1</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_z_1</span><span class="p">)</span>
+        <span class="n">sigma2_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">p_z_1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span>
+        <span class="n">sigma2_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_z_1</span><span class="p">))</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_z_1</span><span class="p">)</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_z_1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">theta_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mu_1</span><span class="p">,</span> <span class="n">sigma2_1</span><span class="p">,</span> <span class="n">mu_2</span><span class="p">,</span> <span class="n">sigma2_2</span><span class="p">,</span> <span class="n">p1</span><span class="p">])</span>
+        
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">theta_new</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">Q_history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">EM</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.61403194, 0.58183979, 6.49747214, 5.07879106, 0.43462642])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f74405a2a60&gt;]
+</pre></div>
+</div>
+<img alt="../_images/notebook_71_1.png" src="../_images/notebook_71_1.png" />
+</div>
+</div>
+<p>Об объяснении такой динамики можно прочитать <a class="reference external" href="https://stats.stackexchange.com/questions/341173/em-algorithm-seems-to-work-but-q-is-not-monotonic-possible-reasons">здесь</a>.</p>
+</div>
+<div class="section" id="id7">
+<h3>Тестирование EM-алгоритма на случайных данных.<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3.56351666,  4.37320049,  5.18288431,  4.37320049,  0.5       ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">EM</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04256547, 1.01503608, 3.97557634, 0.24095056, 0.50103058])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f744055e640&gt;]
+</pre></div>
+</div>
+<img alt="../_images/notebook_77_1.png" src="../_images/notebook_77_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./em"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="practice.html" title="previous page">Практика</a>
+    <a class='right-next' id="next-link" href="problems.html" title="next page">Задачи</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
