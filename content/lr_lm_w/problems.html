@@ -445,6 +445,46 @@ y_{100} = 2
 <li><p>Проверьте гипотезу об одновременном равенстве коэффициентов <span class="math notranslate nohighlight">\(a_1\)</span> и <span class="math notranslate nohighlight">\(a_2\)</span> нулю против гипотезы о неравенстве на уровне значимости 5% при помощи <span class="math notranslate nohighlight">\(LR\)</span>-теста.</p></li>
 </ol>
 </div>
+<div class="attention admonition">
+<p class="admonition-title">Задача 2: Модель для зелий (ДЗ1 – 2020)</p>
+<p>Полумна хочет построить предсказательную модель, которая бы описывала зависимость популярности зелья <span class="math notranslate nohighlight">\(y_i\)</span> от силы его положительного влияния <span class="math notranslate nohighlight">\(x_i\)</span>.
+Обе величины являются количественными непрерывными переменными на <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+Предположим, что Полумна знает, как измерить популярность и силу влияния и верит, что искомая зависимость имеет следующий вид:</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \beta_1 e^{\beta_2 x_i}u_i,
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\beta_1\)</span> и <span class="math notranslate nohighlight">\(\beta_2\)</span> – неизвестные коэффициенты, не равные нулю, <span class="math notranslate nohighlight">\(u_i \)</span> – случайная ошибка, причём <span class="math notranslate nohighlight">\(\ln u_i \sim \mathcal{N}(0,1)\)</span>.</p>
+<p>А) Является ли данная зависимость линейной по <span class="math notranslate nohighlight">\(\beta_1\)</span>? А по <span class="math notranslate nohighlight">\(\beta_2\)</span>?</p>
+<p>Б) Найдите <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> и <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> методом максимального правдоподобия.</p>
+<p>В) Симулируйте <span class="math notranslate nohighlight">\(300\)</span> наблюдений <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> таким образом, что <span class="math notranslate nohighlight">\(x_i \sim \mathcal{N}(0, 1)\)</span>, <span class="math notranslate nohighlight">\(y_i = 3e^{x_i}u_i\)</span>, <span class="math notranslate nohighlight">\(\ln u_i \sim \mathcal{N}(0, 1)\)</span>.</p>
+<p>Г) По полученным данным найдите <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> и <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> в числах.</p>
+<p>Д) Проверьте гипотезу</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H_0: \begin{pmatrix}
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix} = 
+\begin{pmatrix}
+    1 \\
+    2 \\
+\end{pmatrix}
+\end{split}\]</div>
+<p>против</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+		 H_A: \begin{pmatrix}
+			\beta_1 \\
+			\beta_2 \\
+		\end{pmatrix} \ne
+		\begin{pmatrix}
+			1 \\
+			2 \\
+		\end{pmatrix}
+\end{split}\]</div>
+<p>на уровне значимости <span class="math notranslate nohighlight">\(5\%\)</span> при помощи теста <span class="math notranslate nohighlight">\(LR\)</span>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
