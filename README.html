@@ -416,7 +416,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   Подробности:
+   Алгоритм редактирования:
   </a>
  </li>
 </ul>
@@ -432,14 +432,26 @@
                 
   <div class="section" id="id1">
 <h1>Исходники материалов по ПСМО<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Алгоритм:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://v-marco.github.io/psmo_book">Книжка</a> для чтения в <code class="docutils literal notranslate"><span class="pre">html</span></code></p></li>
+<li><p>Подробности про <a class="reference external" href="https://jupyterbook.org/start/publish.html">jupyter-book</a></p></li>
+</ul>
+<div class="section" id="id2">
+<h2>Алгоритм редактирования:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Правим <code class="docutils literal notranslate"><span class="pre">.md</span></code> файлы в папке <code class="docutils literal notranslate"><span class="pre">content</span></code>.</p></li>
-<li><p>Делаем <code class="docutils literal notranslate"><span class="pre">make</span></code></p></li>
+<li><p>Коммитим изменения в <code class="docutils literal notranslate"><span class="pre">.md</span></code> файлах:</p></li>
 </ol>
-<div class="section" id="id2">
-<h2>Подробности:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>https://jupyterbook.org/start/publish.html</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+git add .
+git commit -m <span class="s1">&#39;new beautiful chapter&#39;</span>
+git push
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Делаем <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p></li>
+<li><p>При желании можно сделать <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>.</p></li>
+</ol>
 </div>
 </div>
 
