@@ -20,20 +20,15 @@ parts:
       title: Example website
   - caption: Тесты LR, LM, W
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/lr_lm_w/lecture.md
+    - file: content/lr_lm_w/seminar.md
+    - file: content/lr_lm_w/problems.md
+    - file: content/lr_lm_w/quiz.md
   - caption: EM-алгоритм
     chapters:
-      - file: em/theory
-        sections:
-        - file: em/definition
-        - file: em/else
-      - file: em/practice
-        sections:
-        - file: em/notebook
-      - file: em/problems
-        sections:
-        - file: em/quiz
+    - file: content/em/lecture.md
+    - file: content/em/seminar.md
+    - file: content/em/quiz.md
   - caption: Бутстрэп
     chapters:
     - url: https://example.com
