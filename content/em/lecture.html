@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -87,7 +87,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Информация
+   Прикладная статистика в машинном обучении
   </a>
  </li>
 </ul>
@@ -599,8 +599,8 @@ Q(\theta, \theta_{old}) = \mathbb{E}\left[ l(x, z, |\theta) | x, \theta_{old} \r
 \ln f(x) = -\dfrac{1}{2}\ln(2\pi\sigma^2) - \dfrac{(x-\mu)^2}{2\sigma^2}
 \]</div>
 <p>Теперь у нас есть все необходимое, чтобы расписать формулу <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old})\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8085c7ff-54d7-4086-ba98-db2d93cb9c83">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8085c7ff-54d7-4086-ba98-db2d93cb9c83" title="Permalink to this equation">¶</a></span>\[\begin{multline}
+<div class="amsmath math notranslate nohighlight" id="equation-6d22c94e-de1f-4ba9-8be1-27d756301115">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6d22c94e-de1f-4ba9-8be1-27d756301115" title="Permalink to this equation">¶</a></span>\[\begin{multline}
 Q(\theta, \theta_{old}) =  \mathbb{E}\left[ \ln p(x, z |\theta) | x, \theta_{old} \right] = \\
 \sum_{i = 1}^n P(z_i = 1 | x, \theta_{old}) \cdot \ln[p_1 \cdot f_1(x)] + (1 - P(z_i = 1 | x, \theta_{old})) \cdot \ln[p_2  f_2(x)] = \\
 \sum\limits_{i = 1}^n \underbrace{P(z_i = 1 | x, \theta_{old})}_{\text{посчитано ранее }} \Big[-\dfrac{1}{2} \ln(2\pi\sigma^2_1) - \dfrac{(x_i-\mu_1)^2}{2\sigma^2_1} + \ln p_1 \Big] + \\ + \underbrace{(1 - P(z_i = 1 | x, \theta_{old}))}_{\text{посчитано ранее }} \Big[ -\dfrac{1}{2}\ln(2\pi\sigma^2_2) - \dfrac{(x_i-\mu_2)^2}{2\sigma^2_2} + \ln (1 - p_1) \Big]
