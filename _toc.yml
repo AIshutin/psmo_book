@@ -12,8 +12,9 @@ parts:
       title: Example website
   - caption: Энтропия и дивергенция Кульбака-Лейблера
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/entropy_kl/quiz.md
+    - url: http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf
+      title: Прекрасный обзор с картинками
   - caption: Метод максимального правдоподобия
     chapters:
     - url: https://example.com
