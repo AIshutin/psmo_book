@@ -110,8 +110,18 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://example.com">
-   Example website
+  <a class="reference internal" href="../entropy_kl/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf">
+   Прекрасный обзор с картинками
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colah.github.io/posts/2015-09-Visual-Information/">
+   Visual Information Theory
   </a>
  </li>
 </ul>
@@ -599,8 +609,8 @@ Q(\theta, \theta_{old}) = \mathbb{E}\left[ l(x, z, |\theta) | x, \theta_{old} \r
 \ln f(x) = -\dfrac{1}{2}\ln(2\pi\sigma^2) - \dfrac{(x-\mu)^2}{2\sigma^2}
 \]</div>
 <p>Теперь у нас есть все необходимое, чтобы расписать формулу <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old})\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d22c94e-de1f-4ba9-8be1-27d756301115">
-<span class="eqno">(1)<a class="headerlink" href="#equation-6d22c94e-de1f-4ba9-8be1-27d756301115" title="Permalink to this equation">¶</a></span>\[\begin{multline}
+<div class="amsmath math notranslate nohighlight" id="equation-04f1620e-a50c-400c-a4c8-aed9c6c12256">
+<span class="eqno">(1)<a class="headerlink" href="#equation-04f1620e-a50c-400c-a4c8-aed9c6c12256" title="Permalink to this equation">¶</a></span>\[\begin{multline}
 Q(\theta, \theta_{old}) =  \mathbb{E}\left[ \ln p(x, z |\theta) | x, \theta_{old} \right] = \\
 \sum_{i = 1}^n P(z_i = 1 | x, \theta_{old}) \cdot \ln[p_1 \cdot f_1(x)] + (1 - P(z_i = 1 | x, \theta_{old})) \cdot \ln[p_2  f_2(x)] = \\
 \sum\limits_{i = 1}^n \underbrace{P(z_i = 1 | x, \theta_{old})}_{\text{посчитано ранее }} \Big[-\dfrac{1}{2} \ln(2\pi\sigma^2_1) - \dfrac{(x_i-\mu_1)^2}{2\sigma^2_1} + \ln p_1 \Big] + \\ + \underbrace{(1 - P(z_i = 1 | x, \theta_{old}))}_{\text{посчитано ранее }} \Big[ -\dfrac{1}{2}\ln(2\pi\sigma^2_2) - \dfrac{(x_i-\mu_2)^2}{2\sigma^2_2} + \ln (1 - p_1) \Big]
