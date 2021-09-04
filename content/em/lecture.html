@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf">
-   Прекрасный обзор с картинками
+   Обзор с картинками
   </a>
  </li>
  <li class="toctree-l1">
@@ -609,8 +609,8 @@ Q(\theta, \theta_{old}) = \mathbb{E}\left[ l(x, z, |\theta) | x, \theta_{old} \r
 \ln f(x) = -\dfrac{1}{2}\ln(2\pi\sigma^2) - \dfrac{(x-\mu)^2}{2\sigma^2}
 \]</div>
 <p>Теперь у нас есть все необходимое, чтобы расписать формулу <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old})\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04f1620e-a50c-400c-a4c8-aed9c6c12256">
-<span class="eqno">(1)<a class="headerlink" href="#equation-04f1620e-a50c-400c-a4c8-aed9c6c12256" title="Permalink to this equation">¶</a></span>\[\begin{multline}
+<div class="amsmath math notranslate nohighlight" id="equation-59fe2a3f-745d-4166-8e02-dcda5b8a8f17">
+<span class="eqno">(1)<a class="headerlink" href="#equation-59fe2a3f-745d-4166-8e02-dcda5b8a8f17" title="Permalink to this equation">¶</a></span>\[\begin{multline}
 Q(\theta, \theta_{old}) =  \mathbb{E}\left[ \ln p(x, z |\theta) | x, \theta_{old} \right] = \\
 \sum_{i = 1}^n P(z_i = 1 | x, \theta_{old}) \cdot \ln[p_1 \cdot f_1(x)] + (1 - P(z_i = 1 | x, \theta_{old})) \cdot \ln[p_2  f_2(x)] = \\
 \sum\limits_{i = 1}^n \underbrace{P(z_i = 1 | x, \theta_{old})}_{\text{посчитано ранее }} \Big[-\dfrac{1}{2} \ln(2\pi\sigma^2_1) - \dfrac{(x_i-\mu_1)^2}{2\sigma^2_1} + \ln p_1 \Big] + \\ + \underbrace{(1 - P(z_i = 1 | x, \theta_{old}))}_{\text{посчитано ранее }} \Big[ -\dfrac{1}{2}\ln(2\pi\sigma^2_2) - \dfrac{(x_i-\mu_2)^2}{2\sigma^2_2} + \ln (1 - p_1) \Big]
