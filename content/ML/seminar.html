@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Коллекция задач &#8212; Прикладная статистика в машинном обучении</title>
+    <title>Семинар &#8212; Прикладная статистика в машинном обучении</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Задачи к квизу" href="quiz.html" />
-    <link rel="prev" title="Семинар" href="seminar.html" />
+    <link rel="next" title="Лекция" href="../lr_lm_w/lecture.html" />
+    <link rel="prev" title="Задачи к квизу" href="../entropy_kl/quiz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -135,9 +135,9 @@
   Метод максимального правдоподобия
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ML/seminar.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Семинар
   </a>
  </li>
@@ -147,24 +147,24 @@
   Тесты LR, LM, W
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lecture.html">
+  <a class="reference internal" href="../lr_lm_w/lecture.html">
    Лекция
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="seminar.html">
+  <a class="reference internal" href="../lr_lm_w/seminar.html">
    Семинар
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/problems.html">
    Коллекция задач
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="quiz.html">
+  <a class="reference internal" href="../lr_lm_w/quiz.html">
    Задачи к квизу
   </a>
  </li>
@@ -387,7 +387,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/lr_lm_w/problems.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/ML/seminar.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,7 +407,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/V-Marco/psmo_book/tree/main/issues/new?title=Issue%20on%20page%20%2Fcontent/lr_lm_w/problems.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/V-Marco/psmo_book/tree/main/issues/new?title=Issue%20on%20page%20%2Fcontent/ML/seminar.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -428,6 +428,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Задачи
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -437,78 +450,39 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>Коллекция задач<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>Семинар<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Задачи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Задача 1</p>
-<p>Рассмотрим <span class="math notranslate nohighlight">\(AR-1\)</span> модель:</p>
-<div class="math notranslate nohighlight">
-\[
-y_t = a_1 + a_2y_t + \varepsilon_t.
-\]</div>
-<p>Предположим, что <span class="math notranslate nohighlight">\(\varepsilon_{t, i}\)</span> и <span class="math notranslate nohighlight">\(\varepsilon_{t, j}\)</span> независимы для любых <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_t \sim \mathcal{N}(0, 1)\)</span>.
-Также известно, что</p>
-<div class="math notranslate nohighlight">
-\[
-\sum_{t = 1}^{99} y_t = 100
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-y_{100} = 2
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\sum_{t = 1}^{99} y_ty_{t-1} = 80
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\sum_{t = 1}^{99} y_t^2 = 400
-\]</div>
-<ol class="simple">
-<li><p>Зависимы ли <span class="math notranslate nohighlight">\(y_t\)</span> и <span class="math notranslate nohighlight">\(y_{t-1}\)</span>?</p></li>
-<li><p>Найдите условное распределение <span class="math notranslate nohighlight">\(y_t | y_{t-1}\)</span>.</p></li>
-<li><p>Найдите <span class="math notranslate nohighlight">\(\hat{a}_1^{ML}\)</span>, <span class="math notranslate nohighlight">\(\hat{a}_2^{ML}\)</span>.</p></li>
-<li><p>Проверьте гипотезу об одновременном равенстве коэффициентов <span class="math notranslate nohighlight">\(a_1\)</span> и <span class="math notranslate nohighlight">\(a_2\)</span> нулю против гипотезы о неравенстве на уровне значимости 5% при помощи <span class="math notranslate nohighlight">\(LR\)</span>-теста.</p></li>
-</ol>
+<p>Рассмотрим выборку независимых одинаково распределённых случайных величин <span class="math notranslate nohighlight">\(Y_1\)</span>, <span class="math notranslate nohighlight">\(Y_2\)</span>, <span class="math notranslate nohighlight">\(Y_3\)</span>. Известно, что <span class="math notranslate nohighlight">\(Y_i\)</span> может принимать всего три значения: <span class="math notranslate nohighlight">\(2\)</span> с вероятностью <span class="math notranslate nohighlight">\(3a\)</span>, <span class="math notranslate nohighlight">\(4\)</span> с вероятностью <span class="math notranslate nohighlight">\(1-5a\)</span>, <span class="math notranslate nohighlight">\(6\)</span> с вероятностью <span class="math notranslate nohighlight">\(2a\)</span>, где <span class="math notranslate nohighlight">\(a\)</span> – неизвестный параметр. Оказалось, что <span class="math notranslate nohighlight">\(Y_1 = 6\)</span>,<span class="math notranslate nohighlight">\(Y_2 = 4\)</span>, <span class="math notranslate nohighlight">\(Y_3 = 6\)</span>.</p>
+<p><strong>[а]</strong> Найдите <span class="math notranslate nohighlight">\(\hat{a}_{ML}\)</span>.</p>
+<p><strong>[б]</strong> Постройте функцию правдоподобия и её логафрим на одном графике. Покажите <span class="math notranslate nohighlight">\(\hat{a}_{ML}\)</span>.</p>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Задача 2: Модель для зелий (ДЗ1 – 2020)</p>
-<p>Полумна хочет построить предсказательную модель, которая бы описывала зависимость популярности зелья <span class="math notranslate nohighlight">\(y_i\)</span> от силы его положительного влияния <span class="math notranslate nohighlight">\(x_i\)</span>.
-Обе величины являются количественными непрерывными переменными на <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
-Предположим, что Полумна знает, как измерить популярность и силу влияния и верит, что искомая зависимость имеет следующий вид:</p>
-<div class="math notranslate nohighlight">
-\[
-y_i = \beta_1 e^{\beta_2 x_i}u_i,
-\]</div>
-<p>где <span class="math notranslate nohighlight">\(\beta_1\)</span> и <span class="math notranslate nohighlight">\(\beta_2\)</span> – неизвестные коэффициенты, не равные нулю, <span class="math notranslate nohighlight">\(u_i \)</span> – случайная ошибка, причём <span class="math notranslate nohighlight">\(\ln u_i \sim \mathcal{N}(0,1)\)</span>.</p>
-<p>А) Является ли данная зависимость линейной по <span class="math notranslate nohighlight">\(\beta_1\)</span>? А по <span class="math notranslate nohighlight">\(\beta_2\)</span>?</p>
-<p>Б) Найдите <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> и <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> методом максимального правдоподобия.</p>
-<p>В) Симулируйте <span class="math notranslate nohighlight">\(300\)</span> наблюдений <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> таким образом, что <span class="math notranslate nohighlight">\(x_i \sim \mathcal{N}(0, 1)\)</span>, <span class="math notranslate nohighlight">\(y_i = 3e^{x_i}u_i\)</span>, <span class="math notranslate nohighlight">\(\ln u_i \sim \mathcal{N}(0, 1)\)</span>.</p>
-<p>Г) По полученным данным найдите <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> и <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> в числах.</p>
-<p>Д) Проверьте гипотезу</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-H_0: \begin{pmatrix}
-    \beta_1 \\
-    \beta_2 \\
-\end{pmatrix} = 
-\begin{pmatrix}
-    1 \\
-    2 \\
-\end{pmatrix}
-\end{split}\]</div>
-<p>против</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-		 H_A: \begin{pmatrix}
-			\beta_1 \\
-			\beta_2 \\
-		\end{pmatrix} \ne
-		\begin{pmatrix}
-			1 \\
-			2 \\
-		\end{pmatrix}
-\end{split}\]</div>
-<p>на уровне значимости <span class="math notranslate nohighlight">\(5\%\)</span> при помощи теста <span class="math notranslate nohighlight">\(LR\)</span>.</p>
+<p class="admonition-title">Задача 2</p>
+<p>Пусть <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(X_N\)</span> – выборка независимых одинаково распределённых величин из нормального распределения <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \sigma^2)\)</span>.</p>
+<p><strong>[а]</strong> Найдите <span class="math notranslate nohighlight">\(\hat{\mu}_{ML}\)</span>, <span class="math notranslate nohighlight">\(\hat{\sigma^2}_{ML}\)</span>.</p>
+<p><strong>[б]</strong> Докажите, что <span class="math notranslate nohighlight">\(\hat{\mu}_{ML}\)</span>, <span class="math notranslate nohighlight">\(\hat{\sigma^2}_{ML}\)</span> – это точка максимума функции правдоподобия.</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Задача 3</p>
+<p>Пусть верно условие задачи 2. Покажите, что <span class="math notranslate nohighlight">\(\hat{\sigma^2}_{ML}\)</span> является состоятельной оценкой <span class="math notranslate nohighlight">\(\hat{\sigma^2}\)</span>.</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Задача 4</p>
+<p>Пусть верно условие задачи 2.</p>
+<p><strong>[а]</strong> Найдите теоретическую информацию Фишера.</p>
+<p><strong>[б]</strong> Найдите оценку информации Фишера.</p>
+<p><strong>[в]</strong> Пусть <span class="math notranslate nohighlight">\(\hat{\sigma^2}_{ML} = 10\)</span>, а <span class="math notranslate nohighlight">\(N = 100\)</span>. Найдите <span class="math notranslate nohighlight">\(\hat{\Var{\hat{\mu}}}\)</span>.</p>
+<p><strong>[г]</strong> Пусть <span class="math notranslate nohighlight">\(\hat{mu}_{ML} = 40\)</span>. Постройте <span class="math notranslate nohighlight">\(95%\)</span>-ый доверительный интервал для <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Задача 5</p>
+<p>Рассмотрим выборку независимых одинаково распределённых случайных величин <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(X_{50}\)</span> из экспоненциального распределения. Оказалось, что <span class="math notranslate nohighlight">\(\bar{X} = 1.5\)</span>.</p>
+<p><strong>[а]</strong> Найдите <span class="math notranslate nohighlight">\(\hat{\lambda}_{ML}\)</span>.</p>
+<p><strong>[б]</strong> Постройте 95%-ый доверительный интервал для <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
 </div>
 </div>
 
@@ -525,7 +499,7 @@ H_0: \begin{pmatrix}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/lr_lm_w"
+            path: "./content/ML"
         },
         predefinedOutput: true
     }
@@ -537,8 +511,8 @@ H_0: \begin{pmatrix}
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="seminar.html" title="previous page">Семинар</a>
-    <a class='right-next' id="next-link" href="quiz.html" title="next page">Задачи к квизу</a>
+    <a class='left-prev' id="prev-link" href="../entropy_kl/quiz.html" title="previous page">Задачи к квизу</a>
+    <a class='right-next' id="next-link" href="../lr_lm_w/lecture.html" title="next page">Лекция</a>
 
         </div>
         
