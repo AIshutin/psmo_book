@@ -12,13 +12,15 @@ parts:
       title: Example website
   - caption: Энтропия и дивергенция Кульбака-Лейблера
     chapters:
+    - file: content/entropy_kl/seminar.md
     - file: content/entropy_kl/quiz.md
     - url: http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf
-      title: Прекрасный обзор с картинками
+      title: Обзор с картинками
+    - url: https://colah.github.io/posts/2015-09-Visual-Information/
+      title: Visual Information Theory
   - caption: Метод максимального правдоподобия
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/ML/seminar.md
   - caption: Тесты LR, LM, W
     chapters:
     - file: content/lr_lm_w/lecture.md
