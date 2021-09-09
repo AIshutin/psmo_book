@@ -614,8 +614,8 @@ Q(\theta, \theta_{old}) = \mathbb{E}\left[ l(x, z, |\theta) | x, \theta_{old} \r
 \ln f(x) = -\dfrac{1}{2}\ln(2\pi\sigma^2) - \dfrac{(x-\mu)^2}{2\sigma^2}
 \]</div>
 <p>Теперь у нас есть все необходимое, чтобы расписать формулу <span class="math notranslate nohighlight">\(Q(\theta, \theta_{old})\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-877fb179-f414-423d-941c-2d40790163ce">
-<span class="eqno">(1)<a class="headerlink" href="#equation-877fb179-f414-423d-941c-2d40790163ce" title="Permalink to this equation">¶</a></span>\[\begin{multline}
+<div class="amsmath math notranslate nohighlight" id="equation-f7bd55ab-0f67-4153-8ae6-512c09b02545">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f7bd55ab-0f67-4153-8ae6-512c09b02545" title="Permalink to this equation">¶</a></span>\[\begin{multline}
 Q(\theta, \theta_{old}) =  \mathbb{E}\left[ \ln p(x, z |\theta) | x, \theta_{old} \right] = \\
 \sum_{i = 1}^n P(z_i = 1 | x, \theta_{old}) \cdot \ln[p_1 \cdot f_1(x)] + (1 - P(z_i = 1 | x, \theta_{old})) \cdot \ln[p_2  f_2(x)] = \\
 \sum\limits_{i = 1}^n \underbrace{P(z_i = 1 | x, \theta_{old})}_{\text{посчитано ранее }} \Big[-\dfrac{1}{2} \ln(2\pi\sigma^2_1) - \dfrac{(x_i-\mu_1)^2}{2\sigma^2_1} + \ln p_1 \Big] + \\ + \underbrace{(1 - P(z_i = 1 | x, \theta_{old}))}_{\text{посчитано ранее }} \Big[ -\dfrac{1}{2}\ln(2\pi\sigma^2_2) - \dfrac{(x_i-\mu_2)^2}{2\sigma^2_2} + \ln (1 - p_1) \Big]
