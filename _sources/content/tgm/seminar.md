@@ -7,7 +7,7 @@
 
 Правила работы с многомерными случайными величинами ($y$, $z$ -- случайные векторы, $A$, $B$ -- матрицы констант; считаем, что все размеры подходящие):
 1. $E(Ay) = AE(y)$.
-2. \mathrm{Var}(Ay) = A\mathrm{Var}(y)A'$.
+2. $\mathrm{Var}(Ay) = A\mathrm{Var}(y)A'$.
 3. $\mathrm{Var}(y + z) = \mathrm{Var}(y) + \mathrm{Var}(z) + \mathrm{cov}(y, z) + \mathrm{cov}(z, y)$.
 4. $\mathrm{cov}(Ay, Bz) = A\mathrm{cov}(y, z)B'$.
 
