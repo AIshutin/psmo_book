@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Семинар &#8212; Прикладная статистика в машинном обучении</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Семинар" href="../hypotheses_linreg/seminar.html" />
+    <link rel="prev" title="Семинар" href="../tgm/seminar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Прикладная статистика в машинном обучении</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Прикладная статистика в машинном обучении
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гипотезы и доверительные интервалы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Энтропия и дивергенция Кульбака-Лейблера
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../entropy_kl/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../entropy_kl/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf">
+   Обзор с картинками
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colah.github.io/posts/2015-09-Visual-Information/">
+   Visual Information Theory
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Метод максимального правдоподобия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тесты LR, LM, W
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/lecture.html">
+   Лекция
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/problems.html">
+   Коллекция задач
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  EM-алгоритм
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/lecture.html">
+   Лекция
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bootstrap/seminar.html">
+   Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://arxiv.org/pdf/1411.5279.pdf">
+   Hesterberg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf">
+   Orloff, Bloom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Теорема Гаусса-Маркова
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tgm/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Распределения в линейной регрессии
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тестирование гипотез в линейной регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hypotheses_linreg/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гетероскедастичность и бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Эндогенность
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Мультиколлинеарность и отбор регрессоров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Нестандартные регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Логистическая регрессия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрическое оценивание
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрические тесты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Множественное тестирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Байесовский подход
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/distr_linreg/seminar.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/V-Marco/psmo_book/tree/main"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/V-Marco/psmo_book/tree/main/issues/new?title=Issue%20on%20page%20%2Fcontent/distr_linreg/seminar.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Задачи
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Семинар<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Задачи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Задача 1: Теорема Хершелла-Максвелла</p>
+<p>Рассмотрим замкнутую плоскую фигуру внутри которой случайно летают частицы. Обозначим <span class="math notranslate nohighlight">\(V = (V_x, V_y)'\)</span> – вектор скоростей случайно выбранной частицы.</p>
+<p>Предположим, что</p>
+<ol class="simple">
+<li><p>Распределение вектора <span class="math notranslate nohighlight">\(V\)</span> не должно меняться при его повороте на любой угол (то есть не зависит от направления вектора).</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_x\)</span> и <span class="math notranslate nohighlight">\(V_y\)</span> независимы.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Var(V_x) = \Var(V_y) = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(v_x, v_y)\)</span> существует и непрерывна.</p></li>
+</ol>
+<p><strong>[а]</strong> Найдите координаты вектора <span class="math notranslate nohighlight">\(V'\)</span>, который получается поворотом вектора <span class="math notranslate nohighlight">\(V\)</span> на <span class="math notranslate nohighlight">\(90^{\circ}\)</span> против часовой стрелки.</p>
+<p><strong>[б]</strong> Докажите, что распределения <span class="math notranslate nohighlight">\(V_x\)</span>, <span class="math notranslate nohighlight">\(V_y\)</span> и <span class="math notranslate nohighlight">\(-V_y\)</span> совпадают.</p>
+<p><strong>[в]</strong> По предположению 3 понятно, что <span class="math notranslate nohighlight">\(\Var(V_x) = \Var(V_y) = 1\)</span>. Покажите, что <span class="math notranslate nohighlight">\(\E(V_x) = \E(V_y) = 0\)</span>.</p>
+<p><strong>[г]</strong> Докажите, что совместная функция плотности <span class="math notranslate nohighlight">\(f_V(v_x, v_y)\)</span> представима в виде</p>
+<p><span class="math notranslate nohighlight">\(f_V(v_x, v_y) = h(v_x^2 + v_y^2),\)</span></p>
+<p>где <span class="math notranslate nohighlight">\(h\)</span> – некоторая функция. Сделайте вывод из этого утверждения.</p>
+<p><strong>[д]</strong> Покажите, что совместная функция плотности <span class="math notranslate nohighlight">\(f_V(v_x, v_y)\)</span> представима в виде</p>
+<p><span class="math notranslate nohighlight">\(f_V(v_x, v_y) = g(v_x^2)g(v_y^2),\)</span></p>
+<p>где <span class="math notranslate nohighlight">\(g\)</span> – некоторая функция.</p>
+<p><strong>[е]</strong> Докажите, что выражение <span class="math notranslate nohighlight">\(h'(t)/h(t)\)</span> равно константе.</p>
+<p><strong>[ё]</strong> Найдите функцию <span class="math notranslate nohighlight">\(h(t)\)</span> с точностью до константы.</p>
+<p><strong>[ж]</strong> Выпишите <span class="math notranslate nohighlight">\(f_V(v_x, v_y)\)</span> с точностью до константы.</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Задача 2: Независимость длин проекций</p>
+<p>Пусть вектор <span class="math notranslate nohighlight">\(u \in \R^3\)</span> имеет многомерное стандартное нормальное распределение.</p>
+<p><strong>[а]</strong> Найдите проекцию вектора <span class="math notranslate nohighlight">\(u\)</span> на подпространство <span class="math notranslate nohighlight">\(V = \{(x_1, x_2, x_3) \text{ }| \text{ } x_1 = x_2 = x_3\}\)</span>.</p>
+<p><strong>[б]</strong> Найдите проекцию вектора <span class="math notranslate nohighlight">\(u\)</span> на подпространство <span class="math notranslate nohighlight">\(W = \{(x_1, x_2, x_3) \text{ }| \text{ } x_2 = 0, x_1 = -x_3\}\)</span>.</p>
+<p><strong>[в]</strong> Являются ли <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(W\)</span> ортогональными?</p>
+<p><strong>[г]</strong> Убедитесь, что <span class="math notranslate nohighlight">\(\Vert\hat{u}_V\Vert\)</span> и <span class="math notranslate nohighlight">\(\Vert\hat{u}_W\Vert\)</span> независимы.</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Задача 3: Распределение хи-квадрат</p>
+<p>Пусть вектор <span class="math notranslate nohighlight">\(u \in \R^n\)</span> имеет многомерное стандартное нормальное распределение. Пусть <span class="math notranslate nohighlight">\(V \subset \R^n\)</span>, <span class="math notranslate nohighlight">\(\dim V = k\)</span>. Тогда <span class="math notranslate nohighlight">\(\Vert\hat{u}_V\Vert^2 \sim \chi^2_k\)</span>.</p>
+<p><strong>[а]</strong> Пусть вектор <span class="math notranslate nohighlight">\(u \in \R^3\)</span> имеет многомерное стандартное нормальное распределение. Найдите проекцию и распределение квадрата длины проекции вектора <span class="math notranslate nohighlight">\(u\)</span> на подпространство <span class="math notranslate nohighlight">\(V = \{(x_1, x_2, x_3 \text{ } | \text{ } x_3 = 2x_1 + x_2)\}\)</span>.</p>
+<p><strong>[б]</strong> Найдите распределение квадрата длины проекции вектора <span class="math notranslate nohighlight">\(u\)</span> на подпространство <span class="math notranslate nohighlight">\(V^{\perp}\)</span>.</p>
+</div>
+<div class="admonition-f admonition">
+<p class="admonition-title">Задача 4: F-распределение</p>
+<p>Пусть случайные величины <span class="math notranslate nohighlight">\(X \sim \chi^2_{a}\)</span>, <span class="math notranslate nohighlight">\(Y \sim \chi^2_{b}\)</span>, и <span class="math notranslate nohighlight">\(X\)</span> и <span class="math notranslate nohighlight">\(Y\)</span> независимы. Тогда случайная величина <span class="math notranslate nohighlight">\(Z\)</span> имеет распределение Фишера с <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span> степенями свободы:</p>
+<p><span class="math notranslate nohighlight">\(Z = \dfrac{X/a}{Y/b} \sim F_{a, b}\)</span></p>
+<p>Пусть вектор <span class="math notranslate nohighlight">\(u \in \R^n\)</span> имеет многомерное стандартное нормальное распределение. Пусть <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(W\)</span> – ортогональные подпространства в <span class="math notranslate nohighlight">\(\R^n\)</span>, <span class="math notranslate nohighlight">\(\dim V = k\)</span>. <span class="math notranslate nohighlight">\(\dim W = m\)</span>.</p>
+<p><strong>[а]</strong> Постройте проекции вектора <span class="math notranslate nohighlight">\(u\)</span> на <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(W\)</span>. Как распределены квадраты длин этих проекций?</p>
+<p><strong>[б]</strong> Постройте проекцию вектора <span class="math notranslate nohighlight">\(u\)</span> на <span class="math notranslate nohighlight">\((V + W)\)</span>.</p>
+<p><strong>[в]</strong> Покажите на рисунке угол, квадрат тангенса которого равен отношению квадратов длин проекций <span class="math notranslate nohighlight">\(u\)</span> на <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(W\)</span>. Обозначим этот угол как <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p><strong>[г]</strong> Какое распределение имеет величина</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{m}{k}\tan^2 \alpha ?\)</span></p>
+<p><strong>[д]</strong> Поясните идею сравнения прогнозов моделей при помощи <span class="math notranslate nohighlight">\(F\)</span>-распределения.</p>
+</div>
+<div class="admonition-f admonition">
+<p class="admonition-title">Задача 5: Применение F-распределения</p>
+<p>Пусть имеются UR-модель и R-модель и тестируется гипотеза</p>
+<p><span class="math notranslate nohighlight">\(H_0: \text{Верны и UR- и R-модели}\)</span></p>
+<p>против</p>
+<p><span class="math notranslate nohighlight">\(H_A: \text{UR-модель верна, а R-модель неверна.}\)</span></p>
+<p>Тогда <span class="math notranslate nohighlight">\(H_0\)</span> отвергается на уровне значимости <span class="math notranslate nohighlight">\(\alpha\)</span>, если <span class="math notranslate nohighlight">\(F\)</span>-статистика</p>
+<p><span class="math notranslate nohighlight">\(F = \dfrac{(RSS_{R} - RSS_{UR})/(\text{df}_{R} - \text{df}_{UR})}{RSS_{UR} / \text{df}_{UR}}\)</span></p>
+<p>превышает критическое значение <span class="math notranslate nohighlight">\(F_{\alpha}\)</span>. Здесь <span class="math notranslate nohighlight">\(df\)</span> – число степеней свободы в соответствующей модели, <span class="math notranslate nohighlight">\(df = n - k\)</span>, где <span class="math notranslate nohighlight">\(n\)</span> – число наблюдений, <span class="math notranslate nohighlight">\(k\)</span> – число регрессоров.</p>
+<p>Пусть UR-модель задаётся следующим образом:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1x_i + \beta_2z_i + u_i\)</span></p>
+<p>Тестируется следующая R-модель:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1(x_i + z_i) + u_i\)</span></p>
+<p>Предположим, что <span class="math notranslate nohighlight">\(u_i \sim \mathcal{N}(0, 1)\)</span> и независимы.</p>
+<p><strong>[а]</strong> Постройте подпространства <span class="math notranslate nohighlight">\(V_{UR}\)</span> и <span class="math notranslate nohighlight">\(V_{R}\)</span> и проекции вектора <span class="math notranslate nohighlight">\(y\)</span> на них.</p>
+<p><strong>[б]</strong> Покажите <span class="math notranslate nohighlight">\(RSS_{UR}\)</span> и <span class="math notranslate nohighlight">\(RSS_{R}\)</span>. Обозначим угол между ними как <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p><strong>[в]</strong> Покажите, что <span class="math notranslate nohighlight">\(RSS_{R} - RSS_{UR} = \Vert \hat{y}_{UR} - \hat{y}_{R} \Vert^2\)</span>.</p>
+<p><strong>[г]</strong> Выразите <span class="math notranslate nohighlight">\(\tan^2 \alpha\)</span> через <span class="math notranslate nohighlight">\(y\)</span>,  <span class="math notranslate nohighlight">\(\hat{y}_{UR}\)</span>, <span class="math notranslate nohighlight">\(\hat{y}_{R}\)</span>.</p>
+<p><strong>[д]</strong> Рассмотрим векторы <span class="math notranslate nohighlight">\(y - \hat{y}_{UR}\)</span> и <span class="math notranslate nohighlight">\(\hat{y}_{UR} - \hat{y}_{R}\)</span>. Найдите размерности подпространств, в которых они лежат.</p>
+<p><strong>[е]</strong> Выпишите <span class="math notranslate nohighlight">\(F\)</span>-статистику в геометрическом и в классическом смыслах.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/distr_linreg"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../tgm/seminar.html" title="previous page">Семинар</a>
+    <a class='right-next' id="next-link" href="../hypotheses_linreg/seminar.html" title="next page">Семинар</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
