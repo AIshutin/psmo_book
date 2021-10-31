@@ -463,16 +463,78 @@
 <div class="section" id="id2">
 <h2>Задачи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="attention admonition">
-<p class="admonition-title">Задача 1</p>
-<p>Правила работы с многомерными случайными величинами (<span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span> – случайные векторы, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> – матрицы констант; считаем, что все размеры подходящие):</p>
+<p class="admonition-title">Задача 1: Мегаматрица</p>
+<p>Правила работы с многомерными случайными величинами (<span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span> – случайные векторы, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> – матрицы констант, считаем, что все размеры подходящие):</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(E(Ay) = AE(y)\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathrm{Var}(Ay) = A\mathrm{Var}(y)A'\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathrm{Var}(y + z) = \mathrm{Var}(y) + \mathrm{Var}(z) + \mathrm{cov}(y, z) + \mathrm{cov}(z, y)\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathrm{cov}(Ay, Bz) = A\mathrm{cov}(y, z)B'\)</span>.</p></li>
 </ol>
-<p>Рассмотрим линейную модель <span class="math notranslate nohighlight">\(y = X\beta + u\)</span>, оцениваемую при помощи МНК. Пусть <span class="math notranslate nohighlight">\(E(u) = 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u) = \sigma^2 I\)</span>, число наблюдений равно <span class="math notranslate nohighlight">\(n\)</span>, число регрессоров, включая константный, равно <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<p>Заполните матрицу характеристик элементов МНК. По строкам и столбцам этой матрицы находятся <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{y}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, <span class="math notranslate nohighlight">\(\hat{u} = y - \hat{y}\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, в ячейках стоят всевозможные ковариации и дисперсии этих величин. Отдельной строкой рассчитайте математические ожидания <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{y}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, <span class="math notranslate nohighlight">\(\hat{u} = y - \hat{y}\)</span>, <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<p>Рассмотрим линейную модель <span class="math notranslate nohighlight">\(y = X\beta + u\)</span>, оцениваемую при помощи МНК. Пусть число наблюдений равно <span class="math notranslate nohighlight">\(n\)</span>, число регрессоров, равно <span class="math notranslate nohighlight">\(k + 1\)</span>. Предположим, что выполнены все предпосылки теоремы Гаусса-Маркова.</p>
+<p>Заполните матрицу, приведённую ниже. По строкам и столбцам этой матрицы находятся <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{y}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, <span class="math notranslate nohighlight">\(\hat{u} = y - \hat{y}\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, в ячейках стоят всевозможные ковариации и дисперсии этих величин. Отдельной строкой рассчитайте математические ожидания <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{y}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, <span class="math notranslate nohighlight">\(\hat{u} = y - \hat{y}\)</span>, <span class="math notranslate nohighlight">\(u\)</span>. Для каждого элемента укажите размеры.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(Var(\cdot)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat{y}\)</span></p></th>
+<th class="head"><p>\hat{\beta}</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat{u}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\hat{y}\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\hat{u}\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(u\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>—————</p></td>
+<td><p>—–</p></td>
+<td><p>———–</p></td>
+<td><p>————-</p></td>
+<td><p>———–</p></td>
+<td><p>—–</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E(\cdot)\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
