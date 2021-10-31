@@ -41,16 +41,13 @@ parts:
       title: Orloff, Bloom
   - caption: Теорема Гаусса-Маркова
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/tgm/seminar.md
   - caption: Распределения в линейной регрессии
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/distr_linreg/seminar.md
   - caption: Тестирование гипотез в линейной регрессии
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/hypotheses_linreg/seminar.md
   - caption: Гетероскедастичность и бутстрэп
     chapters:
     - url: https://example.com
