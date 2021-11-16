@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Прикладная статистика в машинном обучении &#8212; Прикладная статистика в машинном обучении</title>
+    <title>Семинар &#8212; Прикладная статистика в машинном обучении</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -256,7 +256,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Прикладная статистика в машинном обучении
+   Семинар
   </a>
  </li>
 </ul>
@@ -461,35 +461,28 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   Семинар 9. Теорема Гаусса-Маркова и гетероскедастичность.
+   Теорема Гаусса-Маркова.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Гетероскедастичность.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Теорема Гаусса-Маркова.
+    <a class="reference internal nav-link" href="#id4">
+     Определение.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Гетероскедастичность.
+    <a class="reference internal nav-link" href="#id5">
+     Идентификация.
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       Определение.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       Идентификация.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       Корректировка гетероскедастичности.
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Корректировка гетероскедастичности.
+    </a>
    </li>
   </ul>
  </li>
@@ -505,11 +498,9 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>Прикладная статистика в машинном обучении<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>Семинар<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>Семинар 9. Теорема Гаусса-Маркова и гетероскедастичность.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>Теорема Гаусса-Маркова.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h2>Теорема Гаусса-Маркова.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p><strong>Теорема.</strong> Если</p>
 <ol class="simple">
@@ -517,7 +508,7 @@
 <li><p>Оценивается регрессия <span class="math notranslate nohighlight">\(\hat{y} = X\hat{\beta}\)</span> при помощи МНК.</p></li>
 <li><p>Матрица <span class="math notranslate nohighlight">\(X\)</span> детерминирована и имеет полный ранг.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbb{E}(u) = 0, \mathrm{Var}(u) = \sigma^2 I\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n \ge k\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(n &gt;&gt; k\)</span>,</p></li>
 </ol>
 <p>то</p>
 <ol class="simple">
@@ -527,11 +518,11 @@
 <li><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span> эффективны в классе линейных по <span class="math notranslate nohighlight">\(y\)</span> несмещённых оценок.</p></li>
 </ol>
 </div>
-<div class="section" id="id4">
-<h3>Гетероскедастичность.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h2>Гетероскедастичность.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<div class="section" id="id5">
-<h4>Определение.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h3>Определение.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Нарушение предпосылки ТГМ: <span class="math notranslate nohighlight">\(\mathrm{Var}(u_i) = \sigma_i^2 \ne \sigma\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,8 +562,8 @@
 </div>
 <p>Проблема: <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = \dfrac{RSS}{n-k}\)</span> неверна, а значит неверны <span class="math notranslate nohighlight">\(\mathrm{se}(\hat{\beta})\)</span>, а значит неверно строятся доверительные интервалы и нельзя доверять результатам проверки гипотез.</p>
 </div>
-<div class="section" id="id6">
-<h4>Идентификация.<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h3>Идентификация.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Существует большое количество различных статистических тестов. Например:</p>
 <ol class="simple">
 <li><p><strong>Goldfeld-Quandt test.</strong></p></li>
@@ -911,8 +902,8 @@ H_1: \exists i: \sigma_i^2 \ne \sigma^2,
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h4>Корректировка гетероскедастичности.<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h3>Корректировка гетероскедастичности.<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><strong>I.</strong> В теории: пусть знаем <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> для всех <span class="math notranslate nohighlight">\(i\)</span>. В этом случае мы можем “исправить” модель так, чтобы гетероскедастичности не было.</p>
 <p><strong>Задание 1.</strong> Рассмотрим модель <span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1x_i + u_i\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u_i) = \dfrac{\sigma^2}{(3 + x_i)^2}\)</span>. Скорректируйте гетероскедастичность в модели и выпишите выражение для оценок скорректированной модели.</p>
 <p><strong>Решение.</strong>
@@ -1620,7 +1611,6 @@ dtype: float64
 </div>
 <p><strong>Wild Bootstrap.</strong></p>
 <p>(Этот метод нужно будет реализовать в домашнем задании самостоятельно).</p>
-</div>
 </div>
 </div>
 </div>
