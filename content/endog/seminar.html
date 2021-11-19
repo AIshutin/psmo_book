@@ -469,7 +469,7 @@
 <ol class="simple">
 <li><p>Модель задана как <span class="math notranslate nohighlight">\(y = X\beta + u\)</span>, и при помощи МНК оценивается линейная регрессия <span class="math notranslate nohighlight">\(\hat{y} = X\hat{\beta}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta\)</span> – вектор констант.</p></li>
-<li><p><span class="math notranslate nohighlight">\(P(\{\text{у матрицы \)</span>X<span class="math notranslate nohighlight">\( есть линейно зависимые столбцы}\}) = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\)</span>{у матрицы <span class="math notranslate nohighlight">\(X\)</span> есть линейно зависимые столбцы}<span class="math notranslate nohighlight">\() = 0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(E(u | X) = 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u | X) = \sigma^2 I\)</span>,</p></li>
 </ol>
 <p>то</p>
@@ -492,19 +492,19 @@
 <p>где <span class="math notranslate nohighlight">\(\alpha\)</span> – показатель русской народной скромности, а <span class="math notranslate nohighlight">\(v_i\)</span> – случайная величина, отражающая несовершенство человеческой памяти. Предположим, что <span class="math notranslate nohighlight">\(\alpha\)</span> – константа, а <span class="math notranslate nohighlight">\(E(x_i) = \mu_x\)</span>, <span class="math notranslate nohighlight">\(E(u_i) = 0\)</span>, <span class="math notranslate nohighlight">\(E(v_i) = 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(x_i) = \sigma^2_x\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u_i) = \sigma^2_u\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(v_i) = \sigma^2_v\)</span>. Предположим, что <span class="math notranslate nohighlight">\(x_i\)</span> не коррелирует с <span class="math notranslate nohighlight">\(v_i\)</span> и <span class="math notranslate nohighlight">\(u_i\)</span>, а все <span class="math notranslate nohighlight">\(u_i\)</span> и <span class="math notranslate nohighlight">\(v_i\)</span> не коррелируют друг с другом и между собой.</p>
 <p>Афанасий оценивает регрессию <span class="math notranslate nohighlight">\(\hat{y}_i = \hat{\beta} x^*_i\)</span> при помощи МНК по собранным данным. Покажите, что <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> не является состоятельной. Как смещение зависит от <span class="math notranslate nohighlight">\(\alpha\)</span>?</p>
 </div>
-<div class="admonition- admonition">
+<div class="attention admonition">
 <p class="admonition-title">Задача 3: Двухшаговый МНК</p>
 <p>Переменные <span class="math notranslate nohighlight">\(z_i\)</span> называются инструментальными, если</p>
 <ol class="simple">
-<li><p>\textit{(релевантность)} <span class="math notranslate nohighlight">\(E(x_iz_i) \ne 0 \sim \mathrm{cov}(x_i, z_i) \ne 0 \sim \plim_{n \to \infty} Z'_jX \ne 0\)</span>.</p></li>
-<li><p>\textit{(валидность)} <span class="math notranslate nohighlight">\(E(u_iz_i) = 0 \sim \mathrm{cov}(u_i, z_i) = 0 \sim \plim_{n \to \infty} Z'_ju = 0\)</span>.</p></li>
+<li><p><em>(релевантность)</em> <span class="math notranslate nohighlight">\(E(x_iz_i) \ne 0 \sim \mathrm{cov}(x_i, z_i) \ne 0 \sim \mathrm{plim}_{n \to \infty} Z'_jX \ne 0\)</span>.</p></li>
+<li><p><em>(валидность)</em> <span class="math notranslate nohighlight">\(E(u_iz_i) = 0 \sim \mathrm{cov}(u_i, z_i) = 0 \sim \mathrm{plim}_{n \to \infty} Z'_ju = 0\)</span>.</p></li>
 </ol>
 <p>Если подобрали подходящие инструменты, то можно применить двухшаговый МНК:</p>
 <p><strong>Шаг 1.</strong> Оценить регрессию <span class="math notranslate nohighlight">\(X\)</span> на <span class="math notranslate nohighlight">\(Z\)</span>, получить прогнозы <span class="math notranslate nohighlight">\(\hat{X}\)</span>.</p>
 <p><strong>Шаг 2.</strong> Оценить регрессию <span class="math notranslate nohighlight">\(y\)</span> на <span class="math notranslate nohighlight">\(\hat{X}\)</span>, получить оценки <span class="math notranslate nohighlight">\(\hat{\beta}_{2SLS}\)</span>.</p>
-<p><strong>[а]</strong> Выведите оценки двухшагового МНК в общем случае (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m \ge k\)</span>).
-<strong>[б]</strong> Выведите оценки метода инструментальных переменных (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m = k\)</span>).
-<strong>[в]</strong> Покажите, что оценки метода инструментальных переменных являются состоятельными.</p>
+<p><strong>[а]</strong> Выведите оценки двухшагового МНК в общем случае (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m \ge k\)</span>).</p>
+<p><strong>[б]</strong> Выведите оценки метода инструментальных переменных (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m = k\)</span>).</p>
+<p><strong>[в]</strong> Покажите, что оценки метода инструментальных переменных являются состоятельными.</p>
 </div>
 </div>
 </div>
