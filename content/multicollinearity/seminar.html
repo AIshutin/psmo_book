@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Прикладная статистика в машинном обучении &#8212; Прикладная статистика в машинном обучении</title>
+    <title>Семинар &#8212; Прикладная статистика в машинном обучении</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -280,7 +280,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Прикладная статистика в машинном обучении
+   Семинар
   </a>
  </li>
 </ul>
@@ -460,31 +460,26 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Семинар 10: Мультиколлинеарность. Отбор регрессоров.
+  <a class="reference internal nav-link" href="#i">
+   I. Мультиколлинеарность.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i">
-     I. Мультиколлинеарность.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id2">
      Индикаторы мультиколлинеарности.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id3">
      Борьба с мультиколлинеарностью.
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ii">
-     II. Отбор регрессоров.
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ii">
+   II. Отбор регрессоров.
+  </a>
  </li>
 </ul>
 
@@ -498,11 +493,9 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>Прикладная статистика в машинном обучении<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>Семинар 10: Мультиколлинеарность. Отбор регрессоров.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h1>Семинар<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="i">
-<h3>I. Мультиколлинеарность.<a class="headerlink" href="#i" title="Permalink to this headline">¶</a></h3>
+<h2>I. Мультиколлинеарность.<a class="headerlink" href="#i" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>Строгая мультиколлинераность появляется при нарушении условия ТГМ о том, что матрица <span class="math notranslate nohighlight">\(X\)</span> является матрицей полного ранга и возникает при наличии линейной зависимости между регрессорами. Однако на практике проблемы возникают и при не строгой мультиколлинеарности (квазимультиколлинеарности), при которой <span class="math notranslate nohighlight">\(\det(X'X) \approx 0\)</span>.</p>
 <p>В теории: строгая мультиколлинеарность приведёт к тому, что оценки МНК будут получаться неединственными, нестрогая мультиколлинеарность не нарушит ТГМ.</p>
@@ -677,9 +670,8 @@ dtype: float64
 </tr>
 </table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 1.4e-23. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.</div></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>Индикаторы мультиколлинеарности.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Индикаторы мультиколлинеарности.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <hr class="docutils" />
 <ol class="simple">
 <li><p>Очевидный: посмотреть на <span class="math notranslate nohighlight">\(\mathrm{scorr}(X)\)</span>:</p></li>
@@ -779,8 +771,8 @@ K(A) = \frac{\lambda_{\max}(A)}{\lambda_{\min}(A)}
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Борьба с мультиколлинеарностью.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Борьба с мультиколлинеарностью.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <hr class="docutils" />
 <ol class="simple">
 <li><p>Ничего не делать: оценки остаются несмещёнными и эффективными среди линейных по <span class="math notranslate nohighlight">\(y\)</span> несмещённых оценок.</p></li>
@@ -790,8 +782,9 @@ K(A) = \frac{\lambda_{\max}(A)}{\lambda_{\min}(A)}
 <li><p>Получить больше наблюдений.</p></li>
 </ol>
 </div>
+</div>
 <div class="section" id="ii">
-<h3>II. Отбор регрессоров.<a class="headerlink" href="#ii" title="Permalink to this headline">¶</a></h3>
+<h2>II. Отбор регрессоров.<a class="headerlink" href="#ii" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <ol class="simple">
 <li><p>Метод последовательного исключения:</p>
@@ -861,7 +854,6 @@ H_1: \sum_i a_i^2 &gt; 0,
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;statsmodels.stats.contrast.ContrastResults&#39;&gt;
 &lt;F test: F=array([[7697.00812222]]), p=0.0, df_denom=5.39e+04, df_num=2&gt;
 </pre></div>
-</div>
 </div>
 </div>
 </div>
