@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Семинар &#8212; Прикладная статистика в машинном обучении</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Семинар" href="../multicollinearity/seminar.html" />
+    <link rel="prev" title="Семинар" href="../heterosc/seminar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Прикладная статистика в машинном обучении</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Прикладная статистика в машинном обучении
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гипотезы и доверительные интервалы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Энтропия и дивергенция Кульбака-Лейблера
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../entropy_kl/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../entropy_kl/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://www.cs.cmu.edu/~venkatg/teaching/ITCS-spr2013/notes/lect-jan22.pdf">
+   Обзор с картинками
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colah.github.io/posts/2015-09-Visual-Information/">
+   Visual Information Theory
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Метод максимального правдоподобия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ML/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тесты LR, LM, W
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/lecture.html">
+   Лекция
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/problems.html">
+   Коллекция задач
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lr_lm_w/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  EM-алгоритм
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/lecture.html">
+   Лекция
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/seminar.html">
+   Семинар
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../em/quiz.html">
+   Задачи к квизу
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bootstrap/seminar.html">
+   Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://arxiv.org/pdf/1411.5279.pdf">
+   Hesterberg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf">
+   Orloff, Bloom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Теорема Гаусса-Маркова
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tgm/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Распределения в линейной регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../distr_linreg/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Тестирование гипотез в линейной регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hypotheses_linreg/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Гетероскедастичность и бутстрэп
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../heterosc/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Эндогенность
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Мультиколлинеарность и отбор регрессоров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../multicollinearity/seminar.html">
+   Семинар
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Нестандартные регрессии
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Логистическая регрессия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрическое оценивание
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Непараметрические тесты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Множественное тестирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Байесовский подход
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://example.com">
+   Example website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/endog/seminar.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/V-Marco/psmo_book/tree/main"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/V-Marco/psmo_book/tree/main/issues/new?title=Issue%20on%20page%20%2Fcontent/endog/seminar.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Задачи
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Семинар<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Задачи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Задача 1: Теорема Гаусса-Маркова для стохастических регрессоров</p>
+<p>Если</p>
+<ol class="simple">
+<li><p>Модель задана как <span class="math notranslate nohighlight">\(y = X\beta + u\)</span>, и при помощи МНК оценивается линейная регрессия <span class="math notranslate nohighlight">\(\hat{y} = X\hat{\beta}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> – вектор констант.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\{\text{у матрицы \)</span>X<span class="math notranslate nohighlight">\( есть линейно зависимые столбцы}\}) = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(u | X) = 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u | X) = \sigma^2 I\)</span>,</p></li>
+</ol>
+<p>то</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span> существуют и единственны с вероятностью один.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span> линейны по <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(\hat{\beta} | X) = \beta\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span> эффективны в классе линейных по <span class="math notranslate nohighlight">\(y\)</span> и условно несмещённых оценок.</p></li>
+</ol>
+<p>А теперь – задача.</p>
+<p><strong>[а]</strong> Покажите, что если предпосылки ТГМ со стохастическими регрессорами выполнены, то оценки <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> являются состоятельными.</p>
+<p><strong>[б]</strong> При нарушении какого условия ТГМ оценки МНК перестанут быть состоятельными?</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Задача 2: Причины эндогенности</p>
+<p><strong>[a]</strong> Рассмотрим модель <span class="math notranslate nohighlight">\(y_i = \beta x_i + u_i\)</span> со стохастическими регрессорами, в которой выполнены все предпосылки ТГМ, кроме <span class="math notranslate nohighlight">\(E(u_i | X) \ne 0\)</span> по какой-то причине. Покажите, что если оценивается регрессия <span class="math notranslate nohighlight">\(\hat{y}_i = \hat{\beta}x_i\)</span> при помощи МНК, то <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> не являются состоятельными.</p>
+<p><strong>[б]</strong> <em>(Пропущенные переменные)</em> Рассмотрим модель <span class="math notranslate nohighlight">\(y_i = \beta x_i + \gamma z_i + u_i\)</span> со стохастическими переменными, в которой выполнены все предпосылки ТГМ. Исследователь Дорофей оценивает регрессию <span class="math notranslate nohighlight">\(\hat{y}_i = \hat{\beta}x_i\)</span> при помощи МНК. Покажите, что оценки в регрессии Дорофея не являются состоятельными.</p>
+<p><strong>[в]</strong> <em>(Ошибки измерения)</em> Отчаянный исследователь Афанасий пытается предсказать результаты контрольной по статистике при помощи модели со стохастическими регрессорами <span class="math notranslate nohighlight">\(y_i = \beta x_i + u_i\)</span>, где <span class="math notranslate nohighlight">\(x_i\)</span> – количество съеденных бургеров известной фирмы. Для сбора данных производится опрос студентов. Афанасий догадывается, что полученные данные отражают не настоящие <span class="math notranslate nohighlight">\(x_i\)</span>, а строятся следующим образом:</p>
+<p><span class="math notranslate nohighlight">\(x_i^* = x_i + \alpha + v_i,\)</span></p>
+<p>где <span class="math notranslate nohighlight">\(\alpha\)</span> – показатель русской народной скромности, а <span class="math notranslate nohighlight">\(v_i\)</span> – случайная величина, отражающая несовершенство человеческой памяти. Предположим, что <span class="math notranslate nohighlight">\(\alpha\)</span> – константа, а <span class="math notranslate nohighlight">\(E(x_i) = \mu_x\)</span>, <span class="math notranslate nohighlight">\(E(u_i) = 0\)</span>, <span class="math notranslate nohighlight">\(E(v_i) = 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(x_i) = \sigma^2_x\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(u_i) = \sigma^2_u\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Var}(v_i) = \sigma^2_v\)</span>. Предположим, что <span class="math notranslate nohighlight">\(x_i\)</span> не коррелирует с <span class="math notranslate nohighlight">\(v_i\)</span> и <span class="math notranslate nohighlight">\(u_i\)</span>, а все <span class="math notranslate nohighlight">\(u_i\)</span> и <span class="math notranslate nohighlight">\(v_i\)</span> не коррелируют друг с другом и между собой.</p>
+<p>Афанасий оценивает регрессию <span class="math notranslate nohighlight">\(\hat{y}_i = \hat{\beta} x^*_i\)</span> при помощи МНК по собранным данным. Покажите, что <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> не является состоятельной. Как смещение зависит от <span class="math notranslate nohighlight">\(\alpha\)</span>?</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Задача 3: Двухшаговый МНК</p>
+<p>Переменные <span class="math notranslate nohighlight">\(z_i\)</span> называются инструментальными, если</p>
+<ol class="simple">
+<li><p>\textit{(релевантность)} <span class="math notranslate nohighlight">\(E(x_iz_i) \ne 0 \sim \mathrm{cov}(x_i, z_i) \ne 0 \sim \plim_{n \to \infty} Z'_jX \ne 0\)</span>.</p></li>
+<li><p>\textit{(валидность)} <span class="math notranslate nohighlight">\(E(u_iz_i) = 0 \sim \mathrm{cov}(u_i, z_i) = 0 \sim \plim_{n \to \infty} Z'_ju = 0\)</span>.</p></li>
+</ol>
+<p>Если подобрали подходящие инструменты, то можно применить двухшаговый МНК:</p>
+<p><strong>Шаг 1.</strong> Оценить регрессию <span class="math notranslate nohighlight">\(X\)</span> на <span class="math notranslate nohighlight">\(Z\)</span>, получить прогнозы <span class="math notranslate nohighlight">\(\hat{X}\)</span>.</p>
+<p><strong>Шаг 2.</strong> Оценить регрессию <span class="math notranslate nohighlight">\(y\)</span> на <span class="math notranslate nohighlight">\(\hat{X}\)</span>, получить оценки <span class="math notranslate nohighlight">\(\hat{\beta}_{2SLS}\)</span>.</p>
+<p><strong>[а]</strong> Выведите оценки двухшагового МНК в общем случае (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m \ge k\)</span>).
+<strong>[б]</strong> Выведите оценки метода инструментальных переменных (<span class="math notranslate nohighlight">\(Z\)</span> имеет размеры <span class="math notranslate nohighlight">\(n\times m\)</span>, <span class="math notranslate nohighlight">\(m = k\)</span>).
+<strong>[в]</strong> Покажите, что оценки метода инструментальных переменных являются состоятельными.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/endog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../heterosc/seminar.html" title="previous page">Семинар</a>
+    <a class='right-next' id="next-link" href="../multicollinearity/seminar.html" title="next page">Семинар</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
