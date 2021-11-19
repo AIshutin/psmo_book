@@ -50,16 +50,13 @@ parts:
     - file: content/hypotheses_linreg/seminar.md
   - caption: Гетероскедастичность и бутстрэп
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/heterosc/seminar.ipynb
   - caption: Эндогенность
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/endog/seminar.md
   - caption: Мультиколлинеарность и отбор регрессоров
     chapters:
-    - url: https://example.com
-      title: Example website
+    - file: content/multicollinearity/seminar.ipynb
   - caption: Нестандартные регрессии
     chapters:
     - url: https://example.com
