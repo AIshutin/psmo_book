@@ -53,6 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Семинар" href="../endog/seminar.html" />
     <link rel="prev" title="Семинар" href="../hypotheses_linreg/seminar.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -267,8 +268,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://example.com">
-   Example website
+  <a class="reference internal" href="../endog/seminar.html">
+   Семинар
   </a>
  </li>
 </ul>
@@ -279,8 +280,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://example.com">
-   Example website
+  <a class="reference internal" href="../multicollinearity/seminar.html">
+   Семинар
   </a>
  </li>
 </ul>
@@ -303,8 +304,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://example.com">
-   Example website
+  <a class="reference internal" href="../logit/seminar.html">
+   Семинар
   </a>
  </li>
 </ul>
@@ -1407,9 +1408,9 @@ dtype: float64
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_reps</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="n">cov_matr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.api</span> <span class="kn">import</span> <span class="n">OLS</span>
+<span class="n">n_reps</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">coef_matr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_reps</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_reps</span><span class="p">):</span>
     <span class="c1"># 1. Строим бутстрэп-выборку</span>
@@ -1417,10 +1418,18 @@ dtype: float64
     <span class="n">y_b</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">endog</span><span class="p">[</span><span class="n">random_inds</span><span class="p">]</span>
     <span class="n">X_b</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">exog</span><span class="p">[</span><span class="n">random_inds</span><span class="p">,</span> <span class="p">:]</span>
     
-    <span class="c1"># 2. Оцениваем модель и обновляем ковариационную матрицу</span>
+    <span class="c1"># 2. Оцениваем модель и сохраняем оценки</span>
     <span class="n">model_b</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">y_b</span><span class="p">,</span> <span class="n">X_b</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-    <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model_b</span><span class="o">.</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">cov_matr</span> <span class="o">=</span> <span class="n">cov_matr</span> <span class="o">+</span> <span class="p">(</span><span class="n">coefs</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">coefs</span><span class="p">))</span> <span class="o">@</span> <span class="p">(</span><span class="n">coefs</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">coefs</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model_b</span><span class="o">.</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">coef_matr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">coefs</span>
+    
+<span class="c1"># Центрируем оценку каждого коэффициента</span>
+<span class="n">coef_matr</span> <span class="o">=</span> <span class="n">coef_matr</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">coef_matr</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Собираем ковариационную матрицу</span>
+<span class="n">cov_matr</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_reps</span><span class="p">):</span>
+    <span class="n">cov_matr</span> <span class="o">+=</span> <span class="n">coef_matr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">@</span> <span class="n">coef_matr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
@@ -1461,57 +1470,57 @@ dtype: float64
   <tbody>
     <tr>
       <th>Intercept</th>
-      <td>5.263149</td>
-      <td>-1.452573</td>
-      <td>-1.493832</td>
-      <td>0.100355</td>
-      <td>-1.184546</td>
-      <td>-1.232553</td>
+      <td>0.099790</td>
+      <td>-0.001459</td>
+      <td>-0.000153</td>
+      <td>0.024355</td>
+      <td>-0.037759</td>
+      <td>0.021478</td>
     </tr>
     <tr>
       <th>depth</th>
-      <td>-1.452573</td>
-      <td>0.401024</td>
-      <td>0.412468</td>
-      <td>-0.026682</td>
-      <td>0.324929</td>
-      <td>0.340834</td>
+      <td>-0.001459</td>
+      <td>0.000022</td>
+      <td>0.000001</td>
+      <td>-0.000211</td>
+      <td>0.000421</td>
+      <td>-0.000338</td>
     </tr>
     <tr>
       <th>table</th>
-      <td>-1.493832</td>
-      <td>0.412468</td>
-      <td>0.424272</td>
-      <td>-0.027530</td>
-      <td>0.333671</td>
-      <td>0.350950</td>
+      <td>-0.000153</td>
+      <td>0.000001</td>
+      <td>0.000001</td>
+      <td>-0.000170</td>
+      <td>0.000176</td>
+      <td>-0.000009</td>
     </tr>
     <tr>
       <th>x</th>
-      <td>0.100355</td>
-      <td>-0.026682</td>
-      <td>-0.027530</td>
-      <td>0.042063</td>
-      <td>-0.063097</td>
-      <td>-0.025110</td>
+      <td>0.024355</td>
+      <td>-0.000211</td>
+      <td>-0.000170</td>
+      <td>0.042448</td>
+      <td>-0.043042</td>
+      <td>0.000539</td>
     </tr>
     <tr>
       <th>y</th>
-      <td>-1.184546</td>
-      <td>0.324929</td>
-      <td>0.333671</td>
-      <td>-0.063097</td>
-      <td>0.317653</td>
-      <td>0.271390</td>
+      <td>-0.037759</td>
+      <td>0.000421</td>
+      <td>0.000176</td>
+      <td>-0.043042</td>
+      <td>0.045780</td>
+      <td>-0.003994</td>
     </tr>
     <tr>
       <th>z</th>
-      <td>-1.232553</td>
-      <td>0.340834</td>
-      <td>0.350950</td>
-      <td>-0.025110</td>
-      <td>0.271390</td>
-      <td>0.294489</td>
+      <td>0.021478</td>
+      <td>-0.000338</td>
+      <td>-0.000009</td>
+      <td>0.000539</td>
+      <td>-0.003994</td>
+      <td>0.005586</td>
     </tr>
   </tbody>
 </table>
@@ -1641,6 +1650,7 @@ dtype: float64
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../hypotheses_linreg/seminar.html" title="previous page">Семинар</a>
+    <a class='right-next' id="next-link" href="../endog/seminar.html" title="next page">Семинар</a>
 
         </div>
         
