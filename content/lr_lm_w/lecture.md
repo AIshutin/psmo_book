@@ -311,7 +311,9 @@ $$
 \end{pmatrix}
 $$
 
-Теперь из этой матрицы достаем нужную нам $\hat{Var}(\hat{\theta}_a) = \hat{Var}(2\hat{\alpha} - \hat{\beta}) = 4\hat{Var}(\hat{\alpha}) + \hat{Var}(\hat{\beta}) - 2 \cdot 2 \hat{Cov}(\hat{\alpha}, \hat{\beta})=\frac{0.2^2}{\frac{4}{625} + \frac{3}{1250} + \frac{12}{2500}} \approx 2.94.$
+Теперь из этой матрицы достаем нужную нам $\hat{Var}(\hat{\theta}_a) = \hat{Var}(2\hat{\alpha} - \hat{\beta}) = 4\hat{Var}(\hat{\alpha}) + \hat{Var}(\hat{\beta}) - 2 \cdot 2 \hat{Cov}(\hat{\alpha}, \hat{\beta}) = \frac{4}{625} + \frac{3}{1250} + \frac{12}{2500}. 
+
+Теперь подставляем в формулу теста: \frac{0.2^2}{\frac{4}{625} + \frac{3}{1250} + \frac{12}{2500}} \approx 2.94.$
 
 Аналогично $LR$ тесту сравниваем $\chi_{crit}^2 \approx 4$ c получившимся значением статистики Вальда. $H_0$ **не отвергается**, так как $2.94 < 4$.
 ```
